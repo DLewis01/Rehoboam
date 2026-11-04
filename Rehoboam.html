@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Rehoboam</title>
+  <link rel="stylesheet" href="css/news.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<!-- <script src="https://raw.githack.com/josephg/noisejs/master/perlin.js"></script> -->
+
+<script src="./perlin.js"></script>
+
+<!-- <canvas id="c2"></canvas> -->
+<canvas id="c1"></canvas>
+<!-- partial -->
+
+<div class="overlays">
+	<div class="msgbox"><?php echo date("d/m/Y") ?><br><span></span></div>
+	<div class="loading"><span>CONNECTING</span></div>
+	<div class="error"><span>ERROR</span></div>
+</div>
+
+
+<div id="background">
+	<canvas id="c"></canvas>
+	<canvas id="target"></canvas>
+</div>
+<script  src="./script3.js"></script>
+<script  src="./news.js"></script>
+</body>
+</html>
