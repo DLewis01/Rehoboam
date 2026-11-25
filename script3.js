@@ -4,7 +4,7 @@ const annotations = [];
 const PEAK_DISTANCE = 25;
 const ANNOTATION_INTERVAL = 3000; // milliseconds
 const MAX_ANNOTATIONS = 12;
-const ANNOTATION_TIMEOUT = 20000; // milliseconds before removal of call out
+const ANNOTATION_TIMEOUT = 5000; // milliseconds before removal of call out
 
 
 let g = $c.getContext('2d');
@@ -157,6 +157,39 @@ function drawAnnotations() {
 
 
 
+
+function drawFeedTitle() {
+    if (typeof window.getFeedTitleOverlay !== "function") return;
+
+    const overlay = window.getFeedTitleOverlay();
+    if (!overlay || !overlay.title || Date.now() > overlay.until) return;
+
+    g.save();
+
+    const maxWidth = Math.min($c.width * 0.78, 620);
+    let fontSize = 22;
+    g.textAlign = "center";
+    g.textBaseline = "middle";
+    g.font = "bold " + fontSize + "px Arial";
+
+    while (fontSize > 14 && g.measureText(overlay.title).width > maxWidth) {
+        fontSize--;
+        g.font = "bold " + fontSize + "px Arial";
+    }
+
+    const textWidth = Math.min(g.measureText(overlay.title).width + 30, maxWidth + 30);
+    g.fillStyle = "rgba(0, 0, 0, 0.58)";
+    g.fillRect(-textWidth / 2, -22, textWidth, 44);
+
+    g.fillStyle = "#d7ffd7";
+    g.shadowColor = "#00e700";
+    g.shadowBlur = 14;
+    g.fillText(overlay.title, 0, 0, maxWidth);
+
+    g.restore();
+}
+
+
 function render() {
   	const { width, height } = $c;
   	g.clearRect(0, 0, width, height);
@@ -243,6 +276,7 @@ function render() {
         }
 
 	drawAnnotations();
+    drawFeedTitle();
 
   	g.restore();
   	requestAnimationFrame(render);
