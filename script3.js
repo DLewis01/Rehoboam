@@ -177,13 +177,11 @@ function drawFeedTitle() {
         g.font = "bold " + fontSize + "px Arial";
     }
 
-    const textWidth = Math.min(g.measureText(overlay.title).width + 30, maxWidth + 30);
-    g.fillStyle = "rgba(0, 0, 0, 0.58)";
-    g.fillRect(-textWidth / 2, -22, textWidth, 44);
-
-    g.fillStyle = "#d7ffd7";
-    g.shadowColor = "#00e700";
-    g.shadowBlur = 14;
+    // Draw directly on the existing white ring background:
+    // no coloured panel, no glow, just crisp black text.
+    g.fillStyle = "#000000";
+    g.shadowColor = "transparent";
+    g.shadowBlur = 0;
     g.fillText(overlay.title, 0, 0, maxWidth);
 
     g.restore();
