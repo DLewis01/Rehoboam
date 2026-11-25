@@ -1,7 +1,7 @@
 # Rehoboam
 The rehoboam West World Quantum AI interface
 
-**UPDATED with more news feeds, and the space bar will cycle thru them**
+**UPDATED with 17 more news feeds, and the space bar will cycle thru them until you find the one you want**
 
 A tribute to the TV series West World's Rehoboam divergence interface
 
