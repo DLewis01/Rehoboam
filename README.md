@@ -1,6 +1,8 @@
 # Rehoboam
 The rehoboam West World Quantum AI interface
 
+**UPDATED with more news feeds, and the space bar will cycle thru them**
+
 A tribute to the TV series West World's Rehoboam divergence interface
 
 In the West World Tv series, Rehoboam is an artificially intelligent quantum computer whos main function is to impose an order to human affairs by careful manipulation and prediction of the future made possible by analysis of the large data set Incite have collected.
